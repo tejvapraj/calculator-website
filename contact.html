@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Tejal's Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Font Awesome CDN (Correct & Latest) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-KY4qtXm7Vl/Fjs9w5KcRjkWB4Trd7a7InOnVm5EM3Jk0rb7kYgqDEo1cXJcVa0PSY+NUw3DrjJPMOfIb2RGpXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="layout">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="bmi.html">BMI</a></li>
+        <li><a href="percent.html">Percentage %</a></li>
+        <li><a href="sqrt.html">Square Root √</a></li>
+        <li><a href="cubert.html">Cube Root ∛</a></li>
+        <li><a href="interest.html">Interest</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h1>Contact Me</h1>
+
+      <div class="contact-form">
+        <form action="https://formspree.io/f/manjljkr" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" name="message" placeholder="Write your message..." required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p style="text-align:center; color:#0f0; font-size:14px;">
+          You'll get a confirmation email after submission.
+        </p>
+      </div>
+
+      
+
+    </main>
+  </div>
+</body>
+
+</html>

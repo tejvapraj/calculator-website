@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="layout">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="percent.html">Percentage %</a></li>
+                <li><a href="sqrt.html">Square Root √</a></li>
+                <li><a href="cubert.html">Cube Root ∛</a></li>
+                <li><a href="interest.html"  class="active">Interest</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1>Simple Interest Calculator</h1>
+            <form onsubmit="event.preventDefault(); calculateInterest();">
+                <label for="principal">Principal Amount (P):</label><br>
+                <input type="number" id="principal" name="principal" placeholder="e.g. 1000"><br><br>
+
+                <label for="rate">Interest Rate (% per annum):</label><br>
+                <input type="number" id="rate" name="rate" placeholder="e.g. 5"><br><br>
+
+                <label for="time">Time (in years):</label><br>
+                <input type="number" id="time" name="time" placeholder="e.g. 2"><br><br>
+
+                <button type="submit">Calculate</button>
+            </form>
+
+            <p id="interest-result"></p>
+        </main>
+    </div>
+
+    <script>
+        function calculateInterest() {
+            const P = parseFloat(document.getElementById("principal").value);
+            const R = parseFloat(document.getElementById("rate").value);
+            const T = parseFloat(document.getElementById("time").value);
+            const resultEl = document.getElementById("interest-result");
+
+            if (isNaN(P) || isNaN(R) || isNaN(T) || P < 0 || R < 0 || T < 0) {
+                resultEl.innerText = "Please enter valid positive numbers.";
+                return;
+            }
+
+            const SI = (P * R * T) / 100;
+            const total = P + SI;
+
+            resultEl.innerText = `Simple Interest: ₹${SI.toFixed(2)}\nTotal Amount: ₹${total.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+
+</html>

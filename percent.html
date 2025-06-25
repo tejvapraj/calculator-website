@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percent Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="layout">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="bmi.html">BMI</a></li>
+        <li><a href="percent.html" class="active">Percentage %</a></li>
+        <li><a href="sqrt.html">Square Root √</a></li>
+        <li><a href="cubert.html">Cube Root ∛</a></li>
+        <li><a href="interest.html">Interest</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h1>Percentage Calculator</h1>
+      <label for="value">Value:</label><br>
+      <input type="number" id="value" placeholder="e.g. 200"><br><br>
+
+      <label for="percentage">Percentage (%):</label><br>
+      <input type="number" id="percent" placeholder="e.g. 15"><br><br>
+
+      <button onclick="calculatePercent()">Calculate</button>
+      <p id="percent-result"></p>
+    </main>
+  </div>
+
+  <script>
+    function calculatePercent() {
+      const value = parseFloat(document.getElementById('value').value);
+      const percent = parseFloat(document.getElementById('percent').value);
+      if (isNaN(value) || isNaN(percent)) {
+        document.getElementById('percent-result').innerText = 'Enter valid numbers.';
+        return;
+      }
+
+      const result = (percent / 100) * value;
+      document.getElementById('percent-result').innerText = `${percent}% of ${value} = ${result.toFixed(2)}`;
+    }
+  </script>
+</body>
+
+</html>

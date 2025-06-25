@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Root Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="layout">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="percent.html">Percentage %</a></li>
+                <li><a href="sqrt.html">Square Root √</a></li>
+                <li><a href="cubert.html"class="active">Cube Root ∛</a></li>
+                <li><a href="interest.html">Interest</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+      <h1>Cube Root Calculator</h1>
+      <form onsubmit="event.preventDefault(); calculateCubeRoot();">
+        <label for="cube-input">Enter a number:</label><br />
+        <input type="number" id="cube-input" name="cube-input" placeholder="e.g. 27"><br><br>
+        <button type="submit">Calculate ∛</button>
+      </form>
+      <p id="cube-result"></p>
+    </main>
+  </div>
+
+  <script>
+    function calculateCubeRoot() {
+      const num = parseFloat(document.getElementById("cube-input").value);
+      const resultEl = document.getElementById("cube-result");
+
+      if (isNaN(num)) {
+        resultEl.innerText = "Please enter a valid number.";
+        return;
+      }
+
+      const result = Math.cbrt(num);
+      resultEl.innerText = `∛${num} = ${result.toFixed(4)}`;
+    }
+  </script>
+</body>
+</html>
